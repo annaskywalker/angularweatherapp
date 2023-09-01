@@ -11,7 +11,7 @@ export class WeatherApiService {
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5';
   private geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=';
-  private apiKey = environment.apiKey;
+  private apiKey = environment.APIKEY;
 
   getCurrentWeather(lat: number, lon: number): Observable<WeatherData> {
     const url = `${this.apiUrl}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
