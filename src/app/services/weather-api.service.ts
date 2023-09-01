@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { WeatherData } from '../models/Weather';
 import { Place } from '../models/Place';
+import { environment } from './../../environment';
 
 @Injectable()
 export class WeatherApiService {
@@ -10,7 +11,7 @@ export class WeatherApiService {
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5';
   private geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=';
-  private apiKey = 'ba198cf4230249e116a5e4c8445968c0';
+  private apiKey = environment.apiKey;
 
   getCurrentWeather(lat: number, lon: number): Observable<WeatherData> {
     const url = `${this.apiUrl}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;

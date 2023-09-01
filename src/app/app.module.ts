@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ResetlocationComponent } from './components/resetlocation/resetlocation.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     SearchComponent,
     LoadingComponent,
     CapitalizePipe,
+    ResetlocationComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, FontAwesomeModule],
   providers: [],

@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
   data!: WeatherData;
   lat!: number;
   lon!: number;
+  isLoading: boolean = false;
 
   constructor(private weatherApiService: WeatherApiService) {}
 
@@ -35,6 +36,7 @@ export class MainComponent implements OnInit {
       .subscribe((weather) => {
         this.data = weather;
       });
+    this.isLoading = false;
   }
 
   searchPlace(query: string) {
@@ -45,5 +47,10 @@ export class MainComponent implements OnInit {
         this.fetchWeather();
       }
     });
+  }
+
+  resetLocation() {
+    this.isLoading = true;
+    this.getCurrentLocationAndWeather();
   }
 }

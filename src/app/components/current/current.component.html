@@ -1,31 +1,41 @@
-<div class="flex flex-col items-center">
-  <div class="flex flex-row gap-2 items-center mb-8">
-    <fa-icon [icon]="faMapPin"></fa-icon>
-    <h1 class="text-sm">{{ data.name }}</h1>
-  </div>
-
-  <div class="grid grid-cols-2 gap-8 items-center">
-    <div>
-      <img class="w-[80px]" [src]="imgUrl" />
-      <p class="text-[80px]">{{ data.main.temp | round }}°C</p>
-      {{ currentWeather.description | capitalize }}
+<div class="flex flex-col">
+  <h1 class="text-4xl my-12 ml-4">{{ data.name + ", " + data.sys.country }}</h1>
+  <div class="grid grid-cols-2 gap-[10rem] items-center">
+    <div class="grid grid-cols-2 gap-8">
+      <img class="w-full" [src]="imgUrl" />
+      <div>
+        <p class="text-[50px]">{{ data.main.temp | round }}°C</p>
+        <p class="w-full text-lg whitespace-nowrap">
+          {{ currentWeather.description | capitalize }}
+        </p>
+      </div>
     </div>
-    <div class="grid grid-rows-2 grid-cols-2 gap-4 items-center text-lg">
+    <div class="grid grid-rows-3 grid-cols-2 gap-4 items-center text-lg">
       <p>
+        <fa-icon [icon]="tempMin" class="mr-2"></fa-icon>
         {{ data.main.temp_min | round }}°C
-        <fa-icon [icon]="tempMin" class="ml-2"></fa-icon>
       </p>
       <p>
+        <fa-icon [icon]="tempMax" class="mr-2"></fa-icon>
         {{ data.main.temp_max | round }}°C
-        <fa-icon [icon]="tempMax" class="ml-2"></fa-icon>
       </p>
       <p>
+        <fa-icon [icon]="humidity" class="mr-2"></fa-icon>
         {{ data.main.humidity }} %
-        <fa-icon [icon]="humidity" class="ml-2"></fa-icon>
       </p>
       <p>
-        {{ data.wind.speed }} m/s <fa-icon [icon]="wind" class="ml-2"></fa-icon>
+        <fa-icon [icon]="wind" class="mr-2"></fa-icon>
+        {{ data.wind.speed }} m/s
+      </p>
+      <p>
+        <fa-icon [icon]="sun" class="mr-2"></fa-icon>
+        {{ sunrise }}
+      </p>
+      <p>
+        <fa-icon [icon]="moon" class="mr-2"></fa-icon>
+        {{ sunset }}
       </p>
     </div>
   </div>
+  <div class="grid grid-cols-2 justify-center gap-4"></div>
 </div>

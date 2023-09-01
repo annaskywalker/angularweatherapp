@@ -14,5 +14,6 @@ export class SearchComponent {
 
   doSearch() {
     this.onSearch.emit(this.searchQuery);
+    this.searchQuery = '';
   }
 }

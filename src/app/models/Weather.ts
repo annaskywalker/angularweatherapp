@@ -3,12 +3,14 @@ export type WeatherData = {
   main: Temp;
   name: string;
   sys: {
+    country: string;
     sunrise: number;
     sunset: number;
   };
   wind: {
     speed: number;
   };
+  timezone: number;
 };
 
 export type CurrentWeather = {
