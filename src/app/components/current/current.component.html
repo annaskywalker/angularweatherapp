@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center">
+  <div class="flex flex-row gap-2 items-center mb-8">
+    <fa-icon [icon]="faMapPin"></fa-icon>
+    <h1 class="text-sm">{{ data.name }}</h1>
+  </div>
+
+  <div class="grid grid-cols-2 gap-8 items-center">
+    <div>
+      <img class="w-[80px]" [src]="imgUrl" />
+      <p class="text-[80px]">{{ data.main.temp | round }}°C</p>
+      {{ currentWeather.description | capitalize }}
+    </div>
+    <div class="grid grid-rows-2 grid-cols-2 gap-4 items-center text-lg">
+      <p>
+        {{ data.main.temp_min | round }}°C
+        <fa-icon [icon]="tempMin" class="ml-2"></fa-icon>
+      </p>
+      <p>
+        {{ data.main.temp_max | round }}°C
+        <fa-icon [icon]="tempMax" class="ml-2"></fa-icon>
+      </p>
+      <p>
+        {{ data.main.humidity }} %
+        <fa-icon [icon]="humidity" class="ml-2"></fa-icon>
+      </p>
+      <p>
+        {{ data.wind.speed }} m/s <fa-icon [icon]="wind" class="ml-2"></fa-icon>
+      </p>
+    </div>
+  </div>
+</div>
