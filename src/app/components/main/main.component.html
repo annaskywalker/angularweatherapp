@@ -1,9 +1,0 @@
-<div class="container flex flex-col justify-center" *ngIf="data; else loading">
-  <app-search (onSearch)="searchPlace($event)"></app-search>
-  <app-resetlocation (onReset)="resetLocation()"></app-resetlocation>
-  <div *ngIf="!isLoading; else currentLoading">
-    <app-current [data]="data" [currentWeather]="data.weather[0]"></app-current>
-  </div>
-  <ng-template #currentLoading><app-loading></app-loading></ng-template>
-</div>
-<ng-template #loading><app-loading></app-loading></ng-template>
