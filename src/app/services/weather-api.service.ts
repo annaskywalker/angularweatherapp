@@ -10,7 +10,7 @@ export class WeatherApiService {
   constructor(private http: HttpClient) {}
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5';
-  private geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=';
+  private geoKey = 'https://api.openweathermap.org/geo/1.0/direct?q=';
   private apiKey = environment.apiKey;
 
   getCurrentWeather(lat: number, lon: number): Observable<WeatherData> {
